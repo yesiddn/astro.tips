@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Base from "../../layouts/base.astro";
+import Header from "../../components/Header";
 
 export async function getStaticPaths() {
 	const posts = await getCollection("tips");
@@ -15,5 +16,6 @@ const { Content } = await post.render();
 ---
 
 <Base title="Astro.tips">
+	<Header title="Astro.tips" />
 	<Content />
 </Base>
